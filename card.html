@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>card</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css"
+        integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: #fff;
+            font-family: 'Droid Arabic Kufi', sans-serif !important;
+            direction: rtl;
+
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .grid:hover .card-area {
+            filter: blur(5px);
+            transform: scale(.9)
+        }
+
+        .grid .card-area:hover {
+            filter: blur(0px);
+            transform: scale(1)
+        }
+
+        .grid .card-area {
+            background: #fff;
+            -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+            padding: 10px;
+            text-align: right;
+            margin-top: 3em;
+            border-radius: 2px;
+            height: 400px;
+            transition: all 0.5s ease-in-out;
+            position: relative
+        }
+
+        .grid .card-area::before {
+            content: '';
+            background: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s ease-in-out
+        }
+
+        .grid .card-area:hover:before {
+            transform: scaleY(1.15);
+            background: #7b7b7b
+        }
+
+        .grid .card-area .content {
+            position: absolute;
+            z-index: 2;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .grid .card-area:hover .content {
+            color: #fff;
+        }
+
+
+        .card-area h6 {
+            font-weight: bold;
+            font-size: 16px;
+            position: relative;
+            margin-bottom: 1.5em;
+        }
+
+        .card-area h6::before {
+            content: "";
+            position: absolute;
+            height: 4px;
+            background: #22a6b3;
+            width: 100px;
+            bottom: -13px;
+            border-radius: 3px;
+        }
+
+        .card-area ul {
+            margin: 0px;
+            padding-right: 1.5em;
+        }
+
+        .card-area ul li {
+            list-style: none;
+            border-bottom: 1px dashed #adabab;
+            margin: 9px;
+            padding-bottom: 7px;
+            font-size: 14px;
+            text-indent: -2em;
+        }
+
+        .card-area ul li i {
+            color: #498caf;
+            margin-left: 5px;
+            font-size: 14px;
+            width: 27px;
+            height: 27px;
+            background: #dedede;
+            text-align: center;
+            border-radius: 50%;
+            padding: 5px 27px 0px 0px;
+        }
+
+        .card-area ul li span {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        span.pending {
+            background: #22a6b3;
+            border-radius: 15px;
+            padding: 0 20px;
+            color: #fff !important;
+            font-size: 12px !important;
+            font-weight: normal !important
+        }
+
+        span.pending {
+            background: #22a6b3;
+            border-radius: 15px;
+            padding: 0 20px;
+            color: #fff !important;
+            font-size: 12px !important;
+            font-weight: normal !important
+        }
+
+        span.confirm {
+            background: #008000;
+            border-radius: 15px;
+            padding: 0 20px;
+            color: #fff !important;
+            font-size: 12px !important;
+            font-weight: normal !important
+        }
+
+        span.started {
+            background: #e85833;
+            border-radius: 15px;
+            padding: 0 20px;
+            color: #fff !important;
+            font-size: 12px !important;
+            font-weight: normal !important
+        }
+    </style>
+</head>
+
+<body>
+    <!--card design-->
+    <div class="container-fluid">
+        <div class="grid">
+            <div class="card-area">
+                <div class="content">
+                    <h6> عنوانك سيأتي هنا</h6>
+                    <ul>
+                        <li>
+                            <i class="fas fa-user"></i>
+                            <span> الاسم الاول: </span> person first name </li>
+                        <li>
+                            <i class="fas fa-user"></i>
+                            <span> اسم العائلة: </span> person last name </li>
+                        <li>
+                            <i class="fas fa-sitemap"></i>
+                            <span> قسم: </span> IT </li>
+                        <li>
+                            <i class="fas fa-edit"></i>
+                            <span> مجال الاقتراح: </span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Incidunt
+                            consequuntur sit magni perspiciatis rerum animi! Beatae ducimus ex inventore ad, rerum non
+                            neque architecto aut ab eum odio dolor reprehenderit illum fugiat dolores doloribus
+                            asperiores
+                            nihil earum et saepe voluptatem! Quibusdam doloremque deserunt ad maxime distinctio aperiam
+                            necessitatibus. Pariatur, sit. </li>
+                        <li>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span> الحالة: </span>
+                            <span class="pending"> Pending </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-area">
+                <div class="content">
+                    <h6> عنوانك سيأتي هنا</h6>
+                    <ul>
+                        <li>
+                            <i class="fas fa-user"></i>
+                            <span> الاسم الاول: </span> person first name </li>
+                        <li>
+                            <i class="fas fa-user"></i>
+                            <span> اسم العائلة: </span> person last name </li>
+                        <li>
+                            <i class="fas fa-sitemap"></i>
+                            <span> قسم: </span> IT </li>
+                        <li>
+                            <i class="fas fa-edit"></i>
+                            <span> مجال الاقتراح: </span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Incidunt
+                            consequuntur sit magni perspiciatis rerum animi! Beatae ducimus ex inventore ad, rerum non
+                            neque architecto aut ab eum odio dolor reprehenderit illum fugiat dolores doloribus
+                            asperiores
+                            nihil earum et saepe voluptatem! Quibusdam doloremque deserunt ad maxime distinctio aperiam
+                            necessitatibus. Pariatur, sit. </li>
+                        <li>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span> الحالة: </span>
+                            <span class="pending"> Pending </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-area">
+                <div class="content">
+                    <h6> عنوانك سيأتي هنا</h6>
+                    <ul>
+                        <li>
+                            <i class="fas fa-user"></i>
+                            <span> الاسم الاول: </span> person first name </li>
+                        <li>
+                            <i class="fas fa-user"></i>
+                            <span> اسم العائلة: </span> person last name </li>
+                        <li>
+                            <i class="fas fa-sitemap"></i>
+                            <span> قسم: </span> IT </li>
+                        <li>
+                            <i class="fas fa-edit"></i>
+                            <span> مجال الاقتراح: </span> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                            Incidunt
+                            consequuntur sit magni perspiciatis rerum animi! Beatae ducimus ex inventore ad, rerum non
+                            neque architecto aut ab eum odio dolor reprehenderit illum fugiat dolores doloribus
+                            asperiores
+                            nihil earum et saepe voluptatem! Quibusdam doloremque deserunt ad maxime distinctio aperiam
+                            necessitatibus. Pariatur, sit. </li>
+                        <li>
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span> الحالة: </span>
+                            <span class="pending"> Pending </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
